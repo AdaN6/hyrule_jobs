@@ -12,6 +12,11 @@
     {{ jobs[0].location }}
   </p> -->
   <header>
+    <div class="title">
+      <h1>
+        Hyrule Jobs
+      </h1>
+    </div>
     <div class="order">
       <button @click="handleClick('title')">Order by title</button>
       <button @click="handleClick('salary')">Order by salary</button>
