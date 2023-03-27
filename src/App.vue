@@ -11,7 +11,7 @@
   <p>
     {{ jobs[0].location }}
   </p> -->
-  <button @click="title">Order by title</button>
+  <button @click="handleClick('title')">Order by title</button>
   <button>Order by salary</button>
   <button>Order by location</button>
   <JobList :jobs="jobs"/>
@@ -58,11 +58,13 @@ export default defineComponent({
       { title: 'prison guard', location: 'gerudo valley', salary: 32000, id: '5' }
     ])
 
-    const handleClick = (term: OrderTerms) => {
+    const order = ref<OrderTerms>('title')
 
+    const handleClick = (term: OrderTerms) => {
+      order.value = term
     }
 
-    return { jobs }
+    return { jobs, handleClick }
   },
 
     // ------------- Practice A -------------
