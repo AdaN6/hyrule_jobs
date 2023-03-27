@@ -11,7 +11,9 @@
   <p>
     {{ jobs[0].location }}
   </p> -->
-
+  <button @click="title">Order by title</button>
+  <button>Order by salary</button>
+  <button>Order by location</button>
   <JobList :jobs="jobs"/>
 </div>
 
@@ -21,6 +23,7 @@
 import { defineComponent, reactive, ref, toRefs } from 'vue';
 import JobList from './components/JobList.vue';
 import Job from './types/Job';
+import OrderTerms from './types/OrderTerms'
 
 
 
@@ -54,6 +57,10 @@ export default defineComponent({
       { title: 'fisherman', location: 'lake hylia', salary: 21000, id: '4' },
       { title: 'prison guard', location: 'gerudo valley', salary: 32000, id: '5' }
     ])
+
+    const handleClick = (term: OrderTerms) => {
+
+    }
 
     return { jobs }
   },
