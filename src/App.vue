@@ -7,22 +7,27 @@
       <button @click="changeName('Fleur')">Change Name</button>
       <button @click="changeAge(30)">Change Age</button> -->
   <!-- End of Practice A -->
-
+<!-- 
   <p>
     {{ jobs[0].location }}
-  </p>
+  </p> -->
+
+  <JobList :jobs="jobs"/>
 </div>
 
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, ref, toRefs } from 'vue';
+import JobList from './components/JobList.vue';
 import Job from './types/Job';
+
 
 
 export default defineComponent({
   name: 'App',
   components: {
+    JobList
   },
   setup() {
     // ------------- Practice A -------------
