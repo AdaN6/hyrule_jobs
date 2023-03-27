@@ -12,9 +12,9 @@
     {{ jobs[0].location }}
   </p> -->
   <button @click="handleClick('title')">Order by title</button>
-  <button>Order by salary</button>
-  <button>Order by location</button>
-  <JobList :jobs="jobs"/>
+  <button @click="handleClick('salary')">Order by salary</button>
+  <button @click="handleClick('location')">Order by location</button>
+  <JobList :jobs="jobs" :order="order"/>
 </div>
 
 </template>
@@ -23,7 +23,7 @@
 import { defineComponent, reactive, ref, toRefs } from 'vue';
 import JobList from './components/JobList.vue';
 import Job from './types/Job';
-import OrderTerms from './types/OrderTerms'
+import OrderTerm from './types/OrderTerms'
 
 
 
@@ -58,13 +58,13 @@ export default defineComponent({
       { title: 'prison guard', location: 'gerudo valley', salary: 32000, id: '5' }
     ])
 
-    const order = ref<OrderTerms>('title')
+    const order = ref<OrderTerm>('title')
 
-    const handleClick = (term: OrderTerms) => {
+    const handleClick = (term: OrderTerm) => {
       order.value = term
     }
 
-    return { jobs, handleClick }
+    return { jobs, handleClick, order }
   },
 
     // ------------- Practice A -------------
