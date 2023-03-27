@@ -6,8 +6,9 @@
             <li v-for="job in orderedJobs" :key="job.id">
                 <h2> {{job.title}} in {{job.location}} </h2>
                 <div class="salary">
+                    <img src="../assets/rupee.svg" alt="rupee icon">
                     <p>
-                        {{job.salary}} pounds
+                        {{job.salary}} rupee
                     </p>
                 </div>
                 <div class="description">

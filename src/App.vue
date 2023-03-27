@@ -13,6 +13,7 @@
   </p> -->
   <header>
     <div class="title">
+      <img src="./assets/heart.svg" alt="side logo">
       <h1>
         Hyrule Jobs
       </h1>
@@ -120,6 +121,18 @@ export default defineComponent({
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
+  }
+
+  header .title{
+    display: flex;
+    justify-content: center;
+  }
+  header img {
+    width: 60px;
+    margin-right: 20px;
+  }
+  header h1 {
+    font-size: 3em;
   }
 
 </style>
